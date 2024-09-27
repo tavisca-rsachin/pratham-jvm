@@ -1,9 +1,9 @@
 plugins {
     java
+    id("org.sonarqube") version "2.6"
 }
 
 group = "com.tavisca.workshops"
-version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
@@ -16,8 +16,8 @@ dependencies {
 }
 
 configure<JavaPluginConvention> {
-    sourceCompatibility = JavaVersion.VERSION_1_10
-    targetCompatibility = JavaVersion.VERSION_1_10
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }
 
 tasks.register<Test>("hidden-tests")
@@ -47,3 +47,4 @@ tasks.named<Test>("hidden-tests") {
         events("passed", "skipped", "failed")
     }
 }
+
